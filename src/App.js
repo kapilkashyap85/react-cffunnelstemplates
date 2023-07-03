@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './Main.css';
+import './Custom.js';
+import Templates from './components/Templates';
+import Solutions from './components/Solutions';
+import Agency from './components/Agency';
+import Home from './components/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HireAnExpert from './components/HireAnExpert';
+import "jquery-ui-dist/jquery-ui";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+	<div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home/>} />
+				<Route path="/solutions" element={<Solutions/>} />
+				<Route path="/agency" element={<Agency/>} />
+				<Route path="/templates" element={<Templates/>} />
+				<Route path="/hireanexpert" element={<HireAnExpert/>} />
+			</Routes>
+		</BrowserRouter>
+	</div>
   );
 }
 
